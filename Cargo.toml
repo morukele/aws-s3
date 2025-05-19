@@ -1,0 +1,18 @@
+[package]
+name = "aws-demo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aws-sdk-s3 = { version = "1.32.0", features = ["rt-tokio"] }
+tokio = { version = "1.38.0", features = ["full"] }
+aws-config = { version = "1.5.0", features = ["behavior-version-latest"] }
+dotenv = "0.15.0"
+actix-web = "4.11.0"
+uuid = { version = "1.16.0", features = ["v4"] }
+actix-multipart = "0.7.2"
+serde = { version = "1.0", features = ["derive"] }
+futures-util = { version = "0.3.17", default-features = false, features = [
+    "std",
+] }
+bytes = "1.10.1"

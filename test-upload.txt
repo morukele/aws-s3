@@ -1,0 +1,1 @@
+This is a text file to be uploaded to s3 from Rust code

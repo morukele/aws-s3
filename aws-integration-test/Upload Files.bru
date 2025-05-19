@@ -1,0 +1,15 @@
+meta {
+  name: Upload Files
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://127.0.0.1:7878/upload
+  body: multipartForm
+  auth: inherit
+}
+
+body:multipart-form {
+  files: @file(/Users/oghenemarho/Downloads/certificate-of-completion-for-tech-fundamentals.pdf)
+}
