@@ -33,7 +33,18 @@ A Rust web API that provides a secure interface for working with AWS S3 buckets.
    AWS_BUCKET_NAME=your_bucket_name
    ```
 
-4. Build and run the project:
+4. Set you AWS IAM policy with:
+
+   ```json
+   {
+     "Effect": "Allow",
+     "Action": ["s3:PutObject", "s3:GetObject"],
+     "Resource": "arn:aws:s3:::my-demo-bucket/*"
+   }
+   ```
+
+5. Build and run the project:
+
    ```bash
    cargo build
    cargo run
@@ -50,6 +61,7 @@ The server will start on `http://127.0.0.1:7878`
 - **Content-Type**: `multipart/form-data`
 - **Body**: Form data with file
 - **Response**:
+
   ```json
   [
     {
@@ -66,6 +78,7 @@ The server will start on `http://127.0.0.1:7878`
 - **URL**: `/download/{key}`
 - **Method**: `GET`
 - **Response**:
+
   ```json
   {
     "url": "presigned-s3-url"
@@ -96,7 +109,3 @@ The API returns appropriate HTTP status codes:
 - 400: Bad Request
 - 404: File Not Found
 - 500: Server Error
-
-## License
-
-[Add your license here]
